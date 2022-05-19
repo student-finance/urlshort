@@ -1,8 +1,10 @@
 name = "url_short"
 type = "webpack"
-route = ''
-zone_id = ''
-usage_model = ''
+route = '*'
 compatibility_flags = []
 workers_dev = true
-compatibility_date = "2022-05-18"
+compatibility_date = "2022-05-16"
+
+kv_namespaces = [
+  { binding = "URL_SHORT", preview_id = "d670227f5fdb4953860188218433192c" }
+]
