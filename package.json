@@ -9,5 +9,8 @@
     "test": "npm ci"
   },
   "author": "Dhruvacube <dhruvashaw@gmail.com>",
-  "license": "GNU General Public License v3.0"
+  "license": "GNU General Public License v3.0",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
 }

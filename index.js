@@ -1,7 +1,7 @@
 addEventListener('fetch', event => {
   try {
-    if (request.method.toUpperCase() === 'POST') return event.respondWith(handlePostRequest(event.request));
-    if (request.method.toUpperCase() === 'GET') return event.respondWith(handleGETRequest(event.request));
+    if (event.request.method.toUpperCase() === 'POST') return event.respondWith(handlePostRequest(event.request));
+    if (event.request.method.toUpperCase() === 'GET') return event.respondWith(handleGETRequest(event.request));
     return event.respondWith(fetch(event.request));
   } catch (e) {
     return event.respondWith(new Response('Error thrown ' + e.message));
@@ -43,4 +43,13 @@ async function handleGETRequest(request) {
     return return404();
   }
   return Response.redirect(redirect_path, 308);
+}
+
+async function handlePostRequest(request){
+  const url = new URL(request.url);
+  console.log(request.headers.get('user-agent'), new Date().toLocaleDateString(), url.pathname.substring(1));
+
+  console.log(await request.text());
+
+  return return404();
 }
